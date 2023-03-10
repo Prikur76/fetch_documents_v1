@@ -1,6 +1,7 @@
 import logging
 import os
 import shutil
+from dotenv import load_dotenv
 
 import pandas as pd
 
@@ -10,13 +11,16 @@ logger = logging.getLogger(__name__)
 
 
 def main():
+
     logging.basicConfig(
         format="[%(levelname)s] - %(asctime)s - %(name)s - %(message)s",
         level=logging.INFO
     )
 
+    load_dotenv()
+
     xlsx_file_path = 'Выгрузка файлов.xlsx'
-    catalog_from = 'C:\\Users\\User\\YandexDisk-TPNEXT\\CATALOG'
+    catalog_from = os.getenv('CATALOG_PATH')
     patterns = ['_ДК_', '_СТС_']
     limit_year = 2023
 
