@@ -19,8 +19,10 @@ def main():
 
     load_dotenv()
 
-    xlsx_file_path = 'Выгрузка файлов.xlsx'
     catalog_from = os.getenv('CATALOG_PATH')
+
+    xlsx_file_path = 'Выгрузка файлов.xlsx'
+
     patterns = ['_ДК_', '_СТС_']
     limit_year = 2023
 
